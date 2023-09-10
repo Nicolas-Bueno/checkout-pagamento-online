@@ -36,7 +36,9 @@ Este documento descreve a implementação da página de pagamento de um site de 
 
 Aqui estão os wireframes da página de pagamento:
 
+![Wireframe 1] (wire1.png)
 
+![Wireframe 2] (wire2.png)
 
 
 
