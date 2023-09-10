@@ -36,9 +36,9 @@ Este documento descreve a implementação da página de pagamento de um site de 
 
 Aqui estão os wireframes da página de pagamento:
 
-![Wireframe 1] (wire1.png)
+![Wireframe 1] (checkout-pagamento-online/wire1.png)
 
-![Wireframe 2] (wire2.png)
+![Wireframe 2] (checkout-pagamento-online/wire2.png)
 
 
 
