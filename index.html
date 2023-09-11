@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+</head>
+<body>
+    <div>
+        <p>Valor <input type="text"></p>
+    </div>
+
+    <div class="radio-group">   
+        <input type="radio" name="radio" value="pix" id="pix">
+        <label for="pix">Pix</label>
+        <input type="radio" name="radio" id="pix">
+        <label for="credito">Crédito</label>   
+    </div>
+    
+    <button type="button">Informar dados</button>
+
+    <div class="container-pix">
+        <h3>Pix</h3>
+        <p>CPF <input type="text"></p>
+        <span id="valor-pix"></span>
+        <button type="button">Pagar</button>
+    </div>
+
+    <div class="container-credito">
+        <h3>Cartão de Crédito</h3>
+        <p>Número <input type="text"></p>
+        <span id="erro-numero"></span>
+        <p>Titular <input type="text"></p>
+        <p>Cód. Segurança <input type="text"></p>
+        <p>Vencimento <input type="text"></p>
+        <p>Parcelas
+            <select id="parcelas" name="parcelas">
+                <option value="1">1 parcela</option>
+                <option value="2">2 parcelas</option>
+                <option value="3">3 parcelas</option>
+                <option value="4">4 parcelas</option>
+                <option value="5">5 parcelas</option>
+            </select>
+        </p>
+        <span id="total-credito"></span>
+        <button type="button">Pagar</button>
+    </div>
+</body>
+</html>
