@@ -1,49 +1,149 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagamento</title>
-</head>
-<body>
-    <div>
-        <p>Valor <input type="text"></p>
-    </div>
 
-    <div class="radio-group">   
-        <input type="radio" name="radio" value="pix" id="pix">
-        <label for="pix">Pix</label>
-        <input type="radio" name="radio" id="pix">
-        <label for="credito">Crédito</label>   
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6f6f6;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input[type="text"], select {
+            width: 85%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .radio-group {
+            margin-bottom: 10px;
+        }
+
+        .radio-group label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+        }
+
+        #bandeira {
+            width: 50px;
+            height: 40px;
+            margin-left: 10px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50; /* Azul semelhante ao PicPay */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Cor mais escura ao passar o mouse */
+        }
+
+        .container-pix {
+            background-color: #f0f0f0; /* Cinza claro */
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .container-credito {
+            background-color: #0099cc; /* Laranja semelhante ao Nubank */
+            padding: 10px;
+            border-radius: 5px;
+            color: #fff;
+            text-align: left;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <p>Valor <input type="text"></p>
+        </div>
+
+        <div class="radio-group">   
+            <input type="radio" name="radio" value="pix" id="pix">
+            <label for="pix">Pix</label>
+            <input type="radio" name="radio" id="credito">
+            <label for="credito">Crédito</label>   
+        </div>
+
+        <button type="button">Informar dados</button>
+
+        <div class="container-pix">
+            <h3>Pix</h3>
+            <p>CPF <input type="text"></p>
+            <span id="valor-pix"></span>
+            <button type="button">Pagar</button>
+        </div>
+
+        <div class="container-credito">
+            <h3>Cartão de Crédito</h3>
+            <p>Número</p>
+            <div class="input-group">
+                <input type="text" id="numero-cartao">
+                <img id="bandeira" src="" alt="Bandeira" style= "display: none;">
+            </div>
+            <span id="erro-numero" style="color: red; display: none; font-size: 12px;">Erro cartão inválido</span>
+            <p>Titular <input type="text"></p>
+            <p>Cód. Segurança <input type="text"></p>
+            <p>Vencimento <input type="text"></p>
+            <p>Parcelas
+                <select id="parcelas" name="parcelas">
+                    <option value="1">1 parcela</option>
+                    <option value="2">2 parcelas</option>
+                    <option value="3">3 parcelas</option>
+                    <option value="4">4 parcelas</option>
+                    <option value="5">5 parcelas</option>
+                </select>
+            </p>
+            <span id="total-credito"></span>
+            <button type="button">Pagar</button>
+        </div>
     </div>
     
-    <button type="button">Informar dados</button>
-
-    <div class="container-pix">
-        <h3>Pix</h3>
-        <p>CPF <input type="text"></p>
-        <span id="valor-pix"></span>
-        <button type="button">Pagar</button>
-    </div>
-
-    <div class="container-credito">
-        <h3>Cartão de Crédito</h3>
-        <p>Número <input type="text"></p>
-        <span id="erro-numero"></span>
-        <p>Titular <input type="text"></p>
-        <p>Cód. Segurança <input type="text"></p>
-        <p>Vencimento <input type="text"></p>
-        <p>Parcelas
-            <select id="parcelas" name="parcelas">
-                <option value="1">1 parcela</option>
-                <option value="2">2 parcelas</option>
-                <option value="3">3 parcelas</option>
-                <option value="4">4 parcelas</option>
-                <option value="5">5 parcelas</option>
-            </select>
-        </p>
-        <span id="total-credito"></span>
-        <button type="button">Pagar</button>
-    </div>
+    
 </body>
+
 </html>
