@@ -1,3 +1,13 @@
+//verificando campo valor
+const valor = document.getElementById("valor");
+const informarDados = document.getElementById("informar-dados");
+
+informarDados.addEventListener("click", function(){
+    if(valor.value == ""){
+        alert("campo deve ser preenchido!");
+    }
+});
+
 // validadando cartao de credito
 const numeroCartaoInput = document.getElementById("numero-cartao");
 const bandeiraImg = document.getElementById("bandeira");
