@@ -4,96 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Pagamento</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f6f6f6;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-        h3 {
-            color: #333;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: #555;
-        }
-
-        input[type="text"], select {
-            width: 85%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .radio-group {
-            margin-bottom: 10px;
-        }
-
-        .radio-group label {
-            display: inline-block;
-            margin-right: 10px;
-        }
-
-        .input-group {
-            display: flex;
-            align-items: center;
-        }
-
-        #bandeira {
-            width: 50px;
-            height: 40px;
-            margin-left: 10px;
-        }
-
-        button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50; /* Azul semelhante ao PicPay */
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        button:hover {
-            background-color: #45a049; /* Cor mais escura ao passar o mouse */
-        }
-
-        .container-pix {
-            background-color: #f0f0f0; /* Cinza claro */
-            padding: 10px;
-            border-radius: 5px;
-            text-align: left;
-        }
-
-        .container-credito {
-            background-color: #0099cc; /* Laranja semelhante ao Nubank */
-            padding: 10px;
-            border-radius: 5px;
-            color: #fff;
-            text-align: left;
-        }
-    </style>
-
 </head>
 
 <body>
@@ -143,40 +55,7 @@
         </div>
     </div>
     
-    <script>
-        const numeroCartaoInput = document.getElementById("numero-cartao");
-        const bandeiraImg = document.getElementById("bandeira");
-        const erroNumeroSpan = document.getElementById("erro-numero");
-
-        numeroCartaoInput.addEventListener("keyup", function() {
-            const numeroCartao = this.value.trim();
-            let bandeiraSrc = "";
-            let bandeiraAlt = "";
-            let erroCartao = "";
-
-            if (numeroCartao.startsWith("1234")) {
-                bandeiraSrc = "img/mastercard.png";
-                bandeiraAlt = "Mastercard";
-            } else if (numeroCartao.startsWith("4321")) {
-                bandeiraSrc = "img/visa.png";
-                bandeiraAlt = "Visa";
-            } else {
-                erroCartao = "Erro cartão inválido";
-            }
-
-            bandeiraImg.src = bandeiraSrc;
-            bandeiraImg.alt = bandeiraAlt;
-            erroNumeroSpan.textContent = erroCartao;
-
-            if (erroCartao) {
-                bandeiraImg.style.display = "none";
-                erroNumeroSpan.style.display = "block";
-            } else {
-                bandeiraImg.style.display = "inline-block";
-                erroNumeroSpan.style.display = "none";
-            }
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
