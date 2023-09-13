@@ -13,7 +13,7 @@ informarDados.addEventListener("click", function() {
         return;
     }
 
-    // Calcula o valor com desconto
+    // Calcula o valor do pix com desconto
     let desconto = 10 / 100;
     let valorNumerico = parseFloat(valor.value);
     let valorComDesconto = valorNumerico - (valorNumerico * desconto);
@@ -21,7 +21,7 @@ informarDados.addEventListener("click", function() {
     if (pix.checked) {
         divPix.style.display = "block";
         divPix.style.marginTop = "10px";
-        valorPix.textContent = "Total: " + valorComDesconto.toFixed(2); // Limita o número de casas decimais
+        valorPix.textContent = "Total: " + valorComDesconto.toFixed(2);
     } else if (credito.checked) {
         divCredito.style.display = "block";
         divCredito.style.marginTop = "10px";
