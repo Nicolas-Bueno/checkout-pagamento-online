@@ -19,10 +19,12 @@ informarDados.addEventListener("click", function() {
     let valorComDesconto = valorNumerico - (valorNumerico * desconto);
 
     if (pix.checked) {
+        divCredito.style.display = "none";
         divPix.style.display = "block";
         divPix.style.marginTop = "10px";
         valorPix.textContent = "Total: " + valorComDesconto.toFixed(2);
     } else if (credito.checked) {
+        divPix.style.display = "none";
         divCredito.style.display = "block";
         divCredito.style.marginTop = "10px";
     }
