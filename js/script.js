@@ -1,10 +1,21 @@
 //verificando campo valor
 const valor = document.getElementById("valor");
 const informarDados = document.getElementById("informar-dados");
+const pix = document.getElementById("pix");
+const credito = document.getElementById("credito");
+const divPix = document.getElementsByClassName("container-pix")[0];
+const divCredito = document.getElementsByClassName("container-credito")[0];
 
 informarDados.addEventListener("click", function(){
     if(valor.value == ""){
         alert("campo deve ser preenchido!");
+        return;
+    } else if(pix.checked && valor.value !== ""){
+        divPix.style.display = "block";
+        divPix.style.marginTop = "10px";
+    }else if(credito.checked && valor.value !== ""){
+        divCredito.style.display = "block";
+        divCredito.style.marginTop = "10px";
     }
 });
 
