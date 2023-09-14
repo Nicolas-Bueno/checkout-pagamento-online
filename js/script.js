@@ -7,6 +7,12 @@ const divPix = document.getElementsByClassName("container-pix")[0];
 const divCredito = document.getElementsByClassName("container-credito")[0];
 const valorPix = document.getElementById("valor-pix");
 
+const pagarCredito = document.getElementById("pagar-credito");
+const pagarPix = document.getElementById("pagar-pix");
+
+const container = document.getElementsByClassName("container")[0];
+const successMessage = document.getElementsByClassName("success-message")[0];
+
 informarDados.addEventListener("click", function() {
     if (valor.value == "") {
         alert("Campo deve ser preenchido!");
@@ -50,7 +56,7 @@ numeroCartaoInput.addEventListener("keyup", function () {
     bandeiraSrc = "img/visa.png";
     bandeiraAlt = "Visa";
   } else {
-    erroCartao = "Erro cartão inválido";
+    erroCartao = "Número de cartão inválido";
   }
 
   bandeiraImg.src = bandeiraSrc;
@@ -131,4 +137,16 @@ function calculandoTotal(){
 
 window.addEventListener("change", function () {
     calculandoTotal();
+});
+
+pagarCredito.addEventListener("click", function(){
+    container.style.display = "none";
+    successMessage.style.display = "block";
+
+});
+
+pagarPix.addEventListener("click", function(){
+    container.style.display = "none";
+    successMessage.style.display = "block";
+
 });

@@ -85,3 +85,19 @@ button:hover {
     text-align: left;
     display: none;
 }
+
+.success-message {
+    background-color: #0D6EF1; /* Azul PicPay */
+    color: #fff; /* Cor do texto branco */
+    border-radius: 5px; /* Cantos arredondados */
+    padding: 20px; /* Espaçamento interno */
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    display: none;
+}
+
+/* Ícone de check (você pode usar um ícone real se preferir) */
+.success-message i {
+    font-size: 24px;
+    margin-right: 10px;
+}
