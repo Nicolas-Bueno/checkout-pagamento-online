@@ -83,7 +83,6 @@ function calcularParcelamento(){
         return;
     }
     
-
     for (let i = 1; i <= parcela; i++) {
         let valorParcela;
         
@@ -106,3 +105,30 @@ function calcularParcelamento(){
     }
 }
 
+// calculando total de parcelamento
+function calculandoTotal(){
+    const numeroParcelas = document.getElementById("parcelas").value;
+    let valorElement = document.getElementById("valor");
+    let valorNumerico = parseFloat(valorElement.value);
+
+    if (numeroParcelas >= 1 && numeroParcelas <= 3) {
+        valorParcela = valorNumerico / numeroParcelas;
+    } else if (numeroParcelas == 4) {
+        valorParcela = (valorNumerico * 1.05) / numeroParcelas; // 5% de juros
+    } else if (numeroParcelas == 5) {
+        valorParcela = (valorNumerico * 1.10) / numeroParcelas; // 10% de juros
+    } else {
+        console.error("Número de parcelas inválido.");
+        return;
+    }
+
+    const spanTotalCredito = document.getElementById("total-credito");
+
+    if (spanTotalCredito) {
+        spanTotalCredito.textContent = "Total: " + valorParcela.toFixed(2);
+    }
+}
+
+window.addEventListener("change", function () {
+    calculandoTotal();
+});
