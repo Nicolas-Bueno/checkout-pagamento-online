@@ -27,6 +27,7 @@ informarDados.addEventListener("click", function() {
         divPix.style.display = "none";
         divCredito.style.display = "block";
         divCredito.style.marginTop = "10px";
+        calcularParcelamento();
     }
 });
 
@@ -64,3 +65,44 @@ numeroCartaoInput.addEventListener("keyup", function () {
     erroNumeroSpan.style.display = "none";
   }
 });
+
+//Parcelamento do credito
+function calcularParcelamento(){
+    const parcela = 5;
+    let valorElement = document.getElementById("valor");
+
+    if (!valorElement) {
+        console.error("Elemento 'valor' não encontrado.");
+        return;
+    }
+
+    let valorNumerico = parseFloat(valorElement.value);
+
+    if (isNaN(valorNumerico)) {
+        console.error("O valor não é um número válido.");
+        return;
+    }
+    
+
+    for (let i = 1; i <= parcela; i++) {
+        let valorParcela;
+        
+        if (i <= 3) {
+            // Para 1 a 3 parcelas, sem juros
+            valorParcela = valorNumerico / i;
+        } else if(i == 4) {
+            // Para 4 parcelas, 5% de juros sobre o valor inicial
+            valorParcela = (valorNumerico * 1.05) / i;
+        }else{
+            valorParcela = (valorNumerico * 1.10) / i;
+        }
+
+        let spanId = "valorParcela" + i;
+        let span = document.getElementById(spanId);
+
+        if (span) {
+            span.textContent = i + "X: R$" + valorParcela.toFixed(2);
+        }
+    }
+}
+
